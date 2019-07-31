@@ -59,6 +59,15 @@ public class ContainerComponentsActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        Button btnStartUIComponents2 = findViewById(R.id.btn_start_ui_component_2);
+        btnStartUIComponents2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), UIComponents2Activity.class));
+            }
+        });
     }
 
     @Override
