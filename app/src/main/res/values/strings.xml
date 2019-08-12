@@ -35,5 +35,5 @@
     <string name="lbl_select_image">Select Image</string>
     <string name="lbl_show_direction_to_shwedagon_pagoda">Direction to Shwe Dagon Pagoda</string>
     <string name="lbl_return">Return</string>
-    <string name="start_ui_components_2">Start Ui Components 2</string>
+    <string name="title_activity_adapter_based_view">AdapterBasedViewActivity</string>
 </resources>

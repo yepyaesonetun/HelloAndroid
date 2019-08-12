@@ -1,4 +1,4 @@
-package com.padcmyanmar.padc9.helloandroid;
+package com.padcmyanmar.padc9.helloandroid.activities;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.padcmyanmar.padc9.helloandroid.R;
 
 import java.util.Random;
 

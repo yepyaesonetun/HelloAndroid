@@ -1,4 +1,4 @@
-package com.padcmyanmar.padc9.helloandroid;
+package com.padcmyanmar.padc9.helloandroid.activities;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.padcmyanmar.padc9.helloandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 

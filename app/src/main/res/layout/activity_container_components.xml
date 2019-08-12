@@ -68,13 +68,6 @@
             android:layout_alignLeft="@id/iv_user_image"
             />
 
-        <Button
-            android:id="@+id/btn_start_ui_component_2"
-            android:layout_width="wrap_content"
-            android:layout_below="@id/btn_show_direction"
-            android:layout_height="wrap_content"
-            android:text="@string/start_ui_components_2"/>
-
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

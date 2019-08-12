@@ -1,4 +1,4 @@
-package com.padcmyanmar.padc9.helloandroid;
+package com.padcmyanmar.padc9.helloandroid.activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -18,6 +18,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.ToggleButton;
+
+import com.padcmyanmar.padc9.helloandroid.R;
 
 import java.util.Calendar;
 

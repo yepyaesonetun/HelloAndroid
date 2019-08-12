@@ -107,7 +107,6 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/margin_medium_2"
             android:clickable="true"
-            android:foreground="@drawable/bg_ripple_primary"
             android:padding="@dimen/margin_medium"
             android:text="@string/btn_check_fruit"
             android:textColor="@color/colorPrimary"

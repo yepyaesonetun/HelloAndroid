@@ -1,4 +1,4 @@
-package com.padcmyanmar.padc9.helloandroid;
+package com.padcmyanmar.padc9.helloandroid.activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.padcmyanmar.padc9.helloandroid.R;
 
 public class ContainerComponentsActivity extends AppCompatActivity {
 
@@ -59,15 +61,6 @@ public class ContainerComponentsActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-        Button btnStartUIComponents2 = findViewById(R.id.btn_start_ui_component_2);
-        btnStartUIComponents2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), UIComponents2Activity.class));
-            }
-        });
     }
 
     @Override
@@ -76,7 +69,7 @@ public class ContainerComponentsActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_GET && resultCode == RESULT_OK && data != null) {
             Uri fullPhotoUri = data.getData();
             ivSelectedImage.setImageURI(fullPhotoUri);
-        } else if (requestCode == RC_FROM_CONTAINER_COMPONENT && resultCode == RESULT_OK && data != null) {
+        } else if (requestCode ==  RC_FROM_CONTAINER_COMPONENT && resultCode == RESULT_OK && data != null) {
             String dataFromStartedActivity = data.getStringExtra(TestActivity.IE_RETURN_DATA);
             Toast.makeText(getApplicationContext(), dataFromStartedActivity, Toast.LENGTH_SHORT).show();
         }
