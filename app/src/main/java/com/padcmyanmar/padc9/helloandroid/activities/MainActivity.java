@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.padcmyanmar.padc9.helloandroid.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

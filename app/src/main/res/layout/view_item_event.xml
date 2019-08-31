@@ -24,7 +24,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/event_placeholder" />
 
-            <TextView
+            <org.mmtextview.components.MMTextView
                 android:id="@+id/tvEventName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <org.mmtextview.components.MMTextView
                 android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/ic_male" />
 
-            <TextView
+            <org.mmtextview.components.MMTextView
                 android:id="@+id/tvEventAgeRange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
-        <TextView
+        <org.mmtextview.components.MMTextView
             android:id="@+id/tvLocationName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
             android:textSize="14sp"
             android:textStyle="bold" />
 
-        <TextView
+        <org.mmtextview.components.MMTextView
             android:id="@+id/tvLocationFullAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
                 android:src="@drawable/person_placeholder" />
 
 
-            <TextView
+            <org.mmtextview.components.MMTextView
                 android:id="@+id/tvOrganizerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <org.mmtextview.components.MMTextView
                 android:id="@+id/tvEventOwnerRole"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

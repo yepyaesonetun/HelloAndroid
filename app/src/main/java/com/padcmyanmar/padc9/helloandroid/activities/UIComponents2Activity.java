@@ -23,7 +23,7 @@ import com.padcmyanmar.padc9.helloandroid.R;
 
 import java.util.Calendar;
 
-public class UIComponents2Activity extends AppCompatActivity {
+public class UIComponents2Activity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

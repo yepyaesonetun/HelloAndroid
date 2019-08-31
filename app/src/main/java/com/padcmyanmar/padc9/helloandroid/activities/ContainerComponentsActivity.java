@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.padcmyanmar.padc9.helloandroid.R;
 
-public class ContainerComponentsActivity extends AppCompatActivity {
+public class ContainerComponentsActivity extends BaseActivity {
 
     private static final int REQUEST_IMAGE_GET = 1;
     public static final int RC_FROM_CONTAINER_COMPONENT = 1234;

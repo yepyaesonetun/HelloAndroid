@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.padcmyanmar.padc9.helloandroid.R;
 import com.padcmyanmar.padc9.helloandroid.adapters.EventDetailImageAdapter;
 
-public class EventDetailsActivity extends AppCompatActivity {
+public class EventDetailsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

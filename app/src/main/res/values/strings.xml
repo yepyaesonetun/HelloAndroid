@@ -36,4 +36,5 @@
     <string name="lbl_show_direction_to_shwedagon_pagoda">Direction to Shwe Dagon Pagoda</string>
     <string name="lbl_return">Return</string>
     <string name="title_activity_adapter_based_view">AdapterBasedViewActivity</string>
+    <string name="lbl_ok">Ok</string>
 </resources>

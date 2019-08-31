@@ -23,7 +23,7 @@ import com.padcmyanmar.padc9.helloandroid.R;
 
 import java.util.Random;
 
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends BaseActivity {
 
     private static final String IE_TEXT_TO_DISPLAY = "IE_TEXT_TO_DISPLAY";
     public static final String IE_RETURN_DATA = "IE_RETURN_DATA";
