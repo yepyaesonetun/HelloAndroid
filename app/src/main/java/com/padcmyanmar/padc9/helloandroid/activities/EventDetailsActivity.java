@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import android.support.v7.widget.Toolbar;
 import com.padcmyanmar.padc9.helloandroid.R;
 import com.padcmyanmar.padc9.helloandroid.adapters.EventDetailImageAdapter;
 import com.padcmyanmar.padc9.helloandroid.data.vos.EventVO;
@@ -50,6 +51,9 @@ public class EventDetailsActivity extends BaseActivity {
         setContentView(R.layout.activity_event_details);
 
         ButterKnife.bind(this);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         ViewPager vpEventDetailImages = findViewById(R.id.vpEventDetailImages);
 
