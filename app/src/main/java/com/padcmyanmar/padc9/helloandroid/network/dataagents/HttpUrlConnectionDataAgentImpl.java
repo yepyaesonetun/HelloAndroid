@@ -37,18 +37,18 @@ public class HttpUrlConnectionDataAgentImpl implements EventDataAgent {
     }
 
     @Override
-    public void getEvents(String accessToken) {
-
+    public void getEvents(String accessToken, GetEventsFromNetworkDelegate delegate) {
+        new GetEventsTask(accessToken, delegate).execute();
     }
 
     public static class GetEventsTask extends AsyncTask<Void, Void, GetEventsResponse> {
 
         private String accessToken;
-        private GetEventsFromNetworkDelegate newsResponseDelegate;
+        private GetEventsFromNetworkDelegate eventsResponseDelegate;
 
-        public GetEventsTask(String accessToken, GetEventsFromNetworkDelegate newsResponseDelegate) {
+        public GetEventsTask(String accessToken, GetEventsFromNetworkDelegate eventsResponseDelegate) {
             this.accessToken = accessToken;
-            this.newsResponseDelegate = newsResponseDelegate;
+            this.eventsResponseDelegate = eventsResponseDelegate;
         }
 
         @Override
@@ -125,7 +125,20 @@ public class HttpUrlConnectionDataAgentImpl implements EventDataAgent {
             return null;
         }
 
-       
+        @Override
+        protected void onPostExecute(GetEventsResponse eventsResponse) {
+            super.onPostExecute(eventsResponse);
+
+            if(eventsResponse != null){
+                if(eventsResponse.isResponseOk()){
+                    eventsResponseDelegate.onSuccess(eventsResponse.getEventList());
+                } else {
+                    eventsResponseDelegate.onFailure(eventsResponse.getMessage());
+                }
+            } else {
+                eventsResponseDelegate.onFailure(EventsConstants.EM_NULL_EVENT_RESPONSE);
+            }
+        }
 
         private String getQuery(List<NameValuePair> params) throws UnsupportedEncodingException {
             StringBuilder result = new StringBuilder();
@@ -144,5 +157,7 @@ public class HttpUrlConnectionDataAgentImpl implements EventDataAgent {
 
             return result.toString();
         }
+
+
     }
 }

@@ -6,5 +6,5 @@ package com.padcmyanmar.padc9.helloandroid.delegates;
  */
 
 public interface EventItemDelegate {
-    void onTapEventItem();
+    void onTapEventItem(int eventId);
 }

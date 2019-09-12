@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.padcmyanmar.padc9.helloandroid.R;
 import com.padcmyanmar.padc9.helloandroid.activities.EventDetailsActivity;
 import com.padcmyanmar.padc9.helloandroid.data.vos.EventVO;
@@ -27,8 +28,6 @@ public class EventItemViewHolder extends BaseViewHolder<EventVO> {
     @BindView(R.id.tvEventName)
     TextView tvEventName;
 
-    @BindView(R.id.tvEventTitle)
-    TextView tvEventTitle;
 
     @BindView(R.id.ivEvent)
     ImageView ivEvent;
@@ -57,14 +56,14 @@ public class EventItemViewHolder extends BaseViewHolder<EventVO> {
     public EventItemViewHolder(@NonNull final View itemView, EventItemDelegate delegate) {
         super(itemView);
 
-        ButterKnife.bind(itemView);
+        ButterKnife.bind(this,itemView);
 
         mEventItemDelegate = delegate;
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mEventItemDelegate.onTapEventItem();
+                mEventItemDelegate.onTapEventItem(mData.getId());
             }
         });
     }
@@ -72,5 +71,24 @@ public class EventItemViewHolder extends BaseViewHolder<EventVO> {
     @Override
     public void bindData(EventVO data) {
 
+        mData = data;
+
+        tvEventName.setText(data.getEventName());
+
+        tvTime.setText(data.getEventStartTime());
+
+        tvEventAgeRange.setText(data.getEventRequirements().getAgeRange());
+
+        tvLocationName.setText(data.getEventLocationName());
+
+        tvLocationFullAddress.setText(data.getEventLocationFullAddress());
+
+        Glide.with(itemView)
+                .load(data.getEventOrganizer().getOrganizerPhotoUrl())
+                .into(ivOrganizer);
+
+        tvOrganizerName.setText(data.getEventOrganizer().getOraganizerName());
+
+        tvEventOwnerRole.setText(data.getEventOrganizer().getOrganizerRole());
     }
 }

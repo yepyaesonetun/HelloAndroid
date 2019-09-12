@@ -5,7 +5,7 @@ import com.padcmyanmar.padc9.helloandroid.data.vos.EventVO;
 import java.util.List;
 
 public interface EventDataAgent {
-    void getEvents(String accessToken);
+    void getEvents(String accessToken, GetEventsFromNetworkDelegate delegate);
 
     interface GetEventsFromNetworkDelegate{
         void onSuccess(List<EventVO> events);

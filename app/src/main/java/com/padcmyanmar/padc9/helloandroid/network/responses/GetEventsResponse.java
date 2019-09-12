@@ -1,13 +1,20 @@
 package com.padcmyanmar.padc9.helloandroid.network.responses;
 
+import com.google.gson.annotations.SerializedName;
 import com.padcmyanmar.padc9.helloandroid.data.vos.EventVO;
 import com.padcmyanmar.padc9.helloandroid.utils.EventsConstants;
 
 import java.util.List;
 
 public class GetEventsResponse {
+
+    @SerializedName("message")
     private String message;
+
+    @SerializedName("code")
     private int code;
+
+    @SerializedName("data")
     private List<EventVO> eventList;
 
     public String getMessage() {

@@ -12,9 +12,14 @@ import android.view.View;
 
 import com.padcmyanmar.padc9.helloandroid.R;
 import com.padcmyanmar.padc9.helloandroid.adapters.EventListAdapter;
+import com.padcmyanmar.padc9.helloandroid.data.models.EventModel;
+import com.padcmyanmar.padc9.helloandroid.data.models.EventModelImpl;
+import com.padcmyanmar.padc9.helloandroid.data.vos.EventVO;
 import com.padcmyanmar.padc9.helloandroid.delegates.EventItemDelegate;
 import com.padcmyanmar.padc9.helloandroid.network.dataagents.HttpUrlConnectionDataAgentImpl;
 import com.padcmyanmar.padc9.helloandroid.utils.EventsConstants;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +33,8 @@ public class AdapterBasedViewActivity extends BaseActivity implements EventItemD
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,29 +46,30 @@ public class AdapterBasedViewActivity extends BaseActivity implements EventItemD
         setSupportActionBar(toolbar);
 
 
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
-
-
         rvEvents.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false));
 
-        EventListAdapter adapter = new EventListAdapter(this);
+        final EventListAdapter adapter = new EventListAdapter(this);
         rvEvents.setAdapter(adapter);
 
-        HttpUrlConnectionDataAgentImpl.getObjInstance().getEvents(EventsConstants.DUMMY_ACCESS_TOKEN);
+        //Load Data
+        eventModel.getEvents(new EventModel.GetEventsFromDataLayerDelegate() {
+            @Override
+            public void onSuccess(List<EventVO> events) {
+                adapter.setNewData(events);
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                showIndefiniteSnackbar(errorMessage);
+            }
+        });
     }
 
 
     @Override
-    public void onTapEventItem() {
-        startActivity(new Intent(this, EventDetailsActivity.class));
+    public void onTapEventItem(int eventId) {
+        Intent intent = EventDetailsActivity.newIntent(getApplicationContext(), eventId);
+        startActivity(intent);
     }
 }
